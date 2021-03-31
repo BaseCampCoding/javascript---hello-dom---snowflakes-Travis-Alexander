@@ -4,15 +4,19 @@ const MIN_DURATION = 2000;
 const MAX_DURATION = 5000;
 
 const snowflakesContainer = document.getElementById("snowflakes-container");
+const snowVSrain = document.querySelector("#snow-vs-rain");
+const quantity = document.querySelector("#quantity");
+const snowColor = document.querySelector("click-color");
 
-setInterval(() => createSnowflake(), 50);
+
+setInterval(() => createSnowflake(), 500);
 
 function randint(lo, hi) {
   return Math.random() * (hi - lo) + lo;
 }
 
 function randomIcon() {
-  if (Math.random() < 0.5) {
+  if (Math.random() > snowVSrain.value) {
     return "fa-snowflake";
   } else {
     return "fa-tint";
@@ -26,6 +30,7 @@ function createSnowflake() {
   snowFlake.style.left = randint(0, 100) + "%";
   snowFlake.style.opacity = Math.random();
   snowFlake.style.fontSize = randint(MIN_SIZE, MAX_SIZE) + "px";
+ 
 
   snowflakesContainer.appendChild(snowFlake);
 
