@@ -62,7 +62,7 @@ function createSnowflake() {
   snowFlake.style.opacity = Math.random();
   snowFlake.style.fontSize = randint(MIN_SIZE, MAX_SIZE) + "px";
   snowFlake.style.color = snowColor.value;
-  snowFlake.style.transform = rotate(`${wind.value}deg`);
+  // snowFlake.style.transform = rotate(`${wind.value}deg`);
  
 
   snowflakesContainer.appendChild(snowFlake);
