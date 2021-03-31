@@ -56,22 +56,40 @@ snowColor.addEventListener("click", () => {
 })
 function createSnowflake() {
   const snowFlake = document.createElement("i");
+  let icon = randomIcon();
 
-  snowFlake.classList.add("fas", randomIcon());
+  snowFlake.classList.add("fas", icon);
   snowFlake.style.left = randint(0, 100) + "%";
   snowFlake.style.opacity = Math.random();
   snowFlake.style.fontSize = randint(MIN_SIZE, MAX_SIZE) + "px";
   snowFlake.style.color = snowColor.value;
-  // snowFlake.style.transform = rotate(`${wind.value}deg`);
+  snowFlake.style.transform = `rotate(${wind.value*-1}deg)`;
  
 
   snowflakesContainer.appendChild(snowFlake);
-  
 
-  snowFlake
-    .animate(
-      { transform: `translate(${wind.value}vw, 100vh) rotate(${wind.value}deg)`},
-      { duration: randint(MIN_DURATION, MAX_DURATION) }
-    )
-    .finished.then(() => snowFlake.remove());
+
+  if (icon === "fa-snowflake"){
+    snowFlake
+    
+        .animate(
+          
+          { transform: `translate(${wind.value}vw, 100vh) rotate(160deg)`},
+          { duration: randint(MIN_DURATION, MAX_DURATION) }
+        )
+        .finished.then(() => snowFlake.remove());
+    }
+  
+  
+  if (icon === "fa-tint"){
+    snowFlake
+    
+        .animate(
+          
+          { transform: `translate(${wind.value}vw, 100vh) rotate(${wind.value*-1}deg)`},
+          { duration: randint(MIN_DURATION, MAX_DURATION) }
+        )
+        .finished.then(() => snowFlake.remove());
+    }
+
 }
