@@ -8,7 +8,7 @@ const snowVSrain = document.querySelector("#snow-vs-rain");
 const quantity = document.querySelector("#quantity");
 const snowColor = document.querySelector("#click-color");
 const wind = document.querySelector("#wind");
-let quantityAmount = 100;
+let quantityAmount = 50;
 
 
 
