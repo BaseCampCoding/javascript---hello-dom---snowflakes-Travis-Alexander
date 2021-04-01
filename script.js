@@ -8,7 +8,7 @@ const snowVSrain = document.querySelector("#snow-vs-rain");
 const quantity = document.querySelector("#quantity");
 const snowColor = document.querySelector("#click-color");
 const wind = document.querySelector("#wind");
-let quantityAmount = 200;
+let quantityAmount = 100;
 
 
 
@@ -21,16 +21,16 @@ quantity.addEventListener("input", () => {
       quantityAmount = 99999999999;
       break;
     case "1":
-      quantityAmount = 200;
+      quantityAmount = 50;
       break;
     case "2":
-      quantityAmount = 100;
+      quantityAmount = 25;
       break;
     case "3":
-      quantityAmount = 65;
+      quantityAmount = 16.6;
       break;
     case "4":
-      quantityAmount = 50;
+      quantityAmount = 12.5;
       break;
     }
     clearInterval(quantityIncrease)
